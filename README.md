@@ -1,20 +1,45 @@
 Hello, Lecturer!
 
-+ Cara Menguji API Routes di Next.js Menggunakan Postman dengan
-  Session Next-Auth 
++ Cara Membedakan CSR dan SSR di Inspect Browser?
 
-        1. Login Melalui Aplikasi Frontend
+        1. Cek di `Tab Network`
+        
+                - CSR (Client Side Rendering)
 
-        2. Ambil Token yang di Simpan di Cookie
+                                1. Inspect Element
 
-                - Step-01: `F12 > Application > Storage > Cookies`
+                                2. Pilih Tab `Network`
 
-                - Step-02: Cari Cookie Bernama `next-auth.session-token`
+                                3. Pilih Filter `Fetch/XHR`
 
-                - Step-03: Salin (Copy-Paste) Token Tersebut
+                                4. Apabila Muncul Request API, Maka Itu `CSR`
 
-        3. Buka Aplikasi Postman
+                                atau
 
-        4. Pada Bagian `Tab Headers` Tambahkan:
+                                1. Inspect Element
 
-                Cookie: next-auth.session-token=YOUR_TOKEN_HERE
+                                2. Pilih Tab `Network`
+
+                                3. Pilih Filter `Doc`
+
+                                4. Pilih Tab `Response`
+
+                                5. Apabila Berisikan Code Javascript, Maka Itu `CSR`
+
+
+
+                - SSR (Server Side Rendering)
+
+                                1. Inspect Element
+
+                                2. Pilih Tab `Network`
+
+                                3. Pilih Filter `Doc`
+
+                                4. Pilih Tab `Response`
+
+                                5. Apabila Berisikan HTML yang Berisikan Data, Maka Itu `SSR`
+
+        2. Cek di `Tab Elements`
+
+                        ![alt text](image.png)
