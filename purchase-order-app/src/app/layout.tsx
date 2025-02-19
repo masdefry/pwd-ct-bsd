@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/cores/Sidebar";
+import Header from "@/components/cores/Header"
+import TanstackProvider from "@/providers/TanstackProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +30,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <TanstackProvider>
+          <div className='grid grid-cols-5 h-screen'>
+            <div className='col-span-1 bg-green-100'>
+              <Sidebar />
+            </div>
+            <div className='col-span-4 overflow-y-auto min-h-full max-h-full'>
+              <Header />
+              {children}
+            </div>
+          </div>
+        </TanstackProvider>
       </body>
     </html>
   );
